@@ -1,0 +1,237 @@
+.weather-form {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  max-height: 1500px;
+  border: 1px solid #ff0000;
+  border-radius: 10px;
+ background-color: #d16363;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0.8; 
+}
+
+
+.weather-form-header {
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.99; 
+}
+
+.weather-form-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  opacity: 0.99; 
+}
+
+.form-group {
+  margin: 10px 0;
+  opacity: 0.99; 
+}
+
+.form-group label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  opacity: 0.99; 
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  opacity: 0.99; 
+
+}
+.form-group1 {
+  margin: 10px 0;
+  opacity: 0.99; 
+}
+
+.form-group1 label {
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  opacity: 0.99; 
+}
+
+.form-group1 input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  opacity: 0.99; 
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  opacity: 0.99; 
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #b30000;
+}
+
+.prediction-result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  color: #2d3436;
+  border-radius: 20px;
+}
+
+/* Weather Animations */
+.weather-form.rainy {
+  background-color: #a4b0be;
+  color: #2f3542;
+  position: relative;
+  overflow: hidden; /* Ensure droplets stay within the container */
+}
+
+.weather-form.rainy::before {
+  content: '☁️';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 50px;
+}
+
+.droplet {
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  background: #3498db;
+  border-radius: 50%;
+  animation: fall 1s infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  0% {
+    top: -10px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Create multiple droplets with different delays */
+
+.droplet:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+}
+.droplet:nth-child(2) {
+  left: 7%;
+  animation-delay: 0.2s;
+}
+.droplet:nth-child(3) {
+  left: 9%;
+  animation-delay: 0.4s;
+}
+.droplet:nth-child(4) {
+  left: 12%;
+  animation-delay: 0.6s;
+}
+.droplet:nth-child(5) {
+  left: 14%;
+  animation-delay: 0.4s;
+}
+.droplet:nth-child(6) {
+  left: 16%;
+  animation-delay: 0.6s;
+}
+
+
+.weather-form.sunny {
+  background-color: #ffeaa7;
+  color: #2d3436;
+}
+
+.weather-form.sunny::before {
+  content: '☀️';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.weather-form.windy {
+  background-color: #74b9ff;
+  color: white;
+  position: relative;
+}
+
+.weather-form.windy::before {
+  content: '🍃 ༄';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: wind 1s linear infinite;
+}
+
+@keyframes wind {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.weather-form.snowy {
+  background-color: #dfe6e9;
+  color: #2d3436;
+  position: relative;
+}
+
+.weather-form.snowy::before {
+  content: '❄️';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
